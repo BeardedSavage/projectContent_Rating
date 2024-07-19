@@ -1,42 +1,46 @@
-import React, { Component } from 'react';
-import {useState} from 'react';
+import React, { useState } from 'react';
 
-class Recommendations extends Component {
-    constructor () {
-        super();
-    }
+const Recommendations = () => {
+    const [recommend, setRecommend] = useState([]);
+    const [recommendInput, setRecommendInput] = useState('');
 
-    render () {
-        return (
+
+    const handleRecommendInput = () => {
+        if (setRecommendInput().trim() !== '') {
+            setRecommend ([...recommend, {recommend: setRecommendInput, paragraph: [] }]);
+            setRecommendInput('');
+        }
+    };
+
+    return (
             <>
             <div>
-                <header>
-                    <h1 className="header">Recommendations</h1>
-                </header>
-                <section>
-                    <p>
-                        I love this server and this community. The admins are always around to help out, they do whatever is neccessary
-                        to make sure your experience is the best. Highly recommend this server to anyone looking for a interactive 
-                        community.
-                    </p>
-                    <p className="name">
-                        ~BeardedSavage
-                    </p>
-                </section>
-                <section>
-                    <form className="form">
-                        <h2>Submit Your Recommendation Here</h2><br />
-                        <legend>Enter Name</legend><br />
-                        <input type="text" className="name" /> <br />
-                        <legend>Enter Recommendation</legend> <br />
-                        <input type="text" className="recommendation" /> <br />
-                        <button>Submit</button>
-                    </form>
-                </section>
+                <h1>Recommendations</h1>
+                <div>
+                    {recommendInput.map((recommendation, index) => (
+                        <div key={index} className="recommendation">
+                            <p>{recommendation.recommend}</p>
+                        </div>
+                    ))}
+                </div><br />
+                <div>
+                    <input 
+                    type="text"
+                    className="recommend-input"
+                    value={recommendInput}
+                    placholder="Recommendation Here"
+                    onChange={(e) => {setRecommendInput(e.value.index);}}
+                     /> <br />
+                     <input 
+                     type="text"
+                     className="name-input"
+                     placholder="Name Here"
+                      /> <br />
+                      <button className="recommend-add" onClick={handleRecommendInput}>Add Recomendation</button>
+                </div>
             </div>
             </>
         )
     }
-}
 
 export default Recommendations;
