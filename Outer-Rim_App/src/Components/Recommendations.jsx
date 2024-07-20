@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const Recommendations = () => {
+function Recommendations() {
     const [recommend, setRecommend] = useState([]);
     const [recommendInput, setRecommendInput] = useState('');
 
 
-    const handleRecommendInput = () => {
-        if (setRecommendInput() !== '') {
-            setRecommend ([...recommend, {recommend: setRecommendInput, paragraph: [] }]);
+    const handleRecommendInput = (index) => {
+        if (setRecommendInput(index) !== '') {
+            setRecommend ([...recommend, recommendInput]);
             setRecommendInput('');
         }
     };
@@ -17,10 +17,10 @@ const Recommendations = () => {
             <div>
                 <h1>Recommendations</h1>
                 <div>
-                    {recommend.length > 0 ? (
-                        {recommend.map((recommend, index) => (
-                            <p key={index}>{recommend}</p>
-                        ))}
+                    {recommend.map((recommendation) => (
+                        <ul className="recommendation">
+                            <li key={recommend.id}>{recommendation.recommend}</li>
+                        </ul>
                     ))}
                 </div><br />
                 <div>
@@ -29,7 +29,7 @@ const Recommendations = () => {
                     className="recommend-input"
                     value={recommendInput}
                     placholder="Recommendation Here"
-                    onChange={(e) => {handleRecommendInput(e.value.index);}}
+                    onChange={(e) => {handleRecommendInput(e.target.value);}}
                      /> <br />
                      <input 
                      type="text"
