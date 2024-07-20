@@ -6,7 +6,7 @@ const Recommendations = () => {
 
 
     const handleRecommendInput = () => {
-        if (setRecommendInput().trim() !== '') {
+        if (setRecommendInput() !== '') {
             setRecommend ([...recommend, {recommend: setRecommendInput, paragraph: [] }]);
             setRecommendInput('');
         }
@@ -17,10 +17,10 @@ const Recommendations = () => {
             <div>
                 <h1>Recommendations</h1>
                 <div>
-                    {recommendInput.map((recommendation, index) => (
-                        <div key={index} className="recommendation">
-                            <p>{recommendation.recommend}</p>
-                        </div>
+                    {recommend.length > 0 ? (
+                        {recommend.map((recommend, index) => (
+                            <p key={index}>{recommend}</p>
+                        ))}
                     ))}
                 </div><br />
                 <div>
@@ -29,7 +29,7 @@ const Recommendations = () => {
                     className="recommend-input"
                     value={recommendInput}
                     placholder="Recommendation Here"
-                    onChange={(e) => {setRecommendInput(e.value.index);}}
+                    onChange={(e) => {handleRecommendInput(e.value.index);}}
                      /> <br />
                      <input 
                      type="text"
@@ -40,7 +40,7 @@ const Recommendations = () => {
                 </div>
             </div>
             </>
-        )
-    }
+        );
+    };
 
 export default Recommendations;
