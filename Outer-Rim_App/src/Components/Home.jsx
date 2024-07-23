@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Applications from './Applications';
 
 class Home extends Component {
     constructor () {
@@ -10,9 +11,9 @@ class Home extends Component {
             <div>
                 <section>
                     <h1>Welcome to Outer-Rim</h1>
-                    <nav>
-                        <button>Applications</button>
-                    </nav>
+                    <div>
+                        <Applications/>
+                    </div>
                 </section>
             </div>
             </>

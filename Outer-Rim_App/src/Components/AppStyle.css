@@ -1,0 +1,26 @@
+form {
+    background-color:maroon;
+    background:radial-gradient(maroon,transparent);
+    text-align:center;
+}
+p {
+    color:white;
+    width:25%;
+    padding-left:38.75%;
+}
+body {
+    background-image: url(https://cdn.discordapp.com/attachments/1155163900216614992/1252017188525572106/Designer-_outer-rim_2.jpg?ex=66a0255f&is=669ed3df&hm=60e830afc6ae8ba40602fe60d809a0ab0dd552443d0954647a6f7f1a1e4a431f&);
+}
+h1 {
+    color:white;
+}
+button {
+    background-color:transparent;
+    color:white;
+    padding-left:3%;
+    border:transparent;
+    padding-bottom: 1%;
+}
+button:hover {
+    color:aqua;
+}
