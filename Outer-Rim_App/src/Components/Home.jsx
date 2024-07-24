@@ -4,7 +4,8 @@ import Applications from './Applications';
 class Home extends Component {
     constructor () {
         super ();
-    }
+        }
+
     render() {
         return (
             <>
