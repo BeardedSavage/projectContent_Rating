@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './AppStyle.css';
 
 function Recommendations() {
     
@@ -15,8 +16,8 @@ function Recommendations() {
     const handleForm = (event) => {
         event.preventDefault();
         const confirmationMessage = `
-        name: '',
-        feedback: ''
+        name: ${recommend.name},
+        feedback: ${recommend.feedback}
         `;
 
         const isConfirmed = window.confirm(`Are you sure you want to enter this information: \n\n ${confirmationMessage}`);
@@ -34,17 +35,20 @@ function Recommendations() {
     return (
             <>
             <div>
-                <h1>Recommendations</h1>
-                <div>
-                    <form action="submit" onSubmit={handleInput}>
+                <div className="form">
+                    <h1>Recommendations</h1>
+                    <form action="submit" onSubmit={handleForm}>
                         <textarea name="feedback"
-                        placholder="Enter your feedback here"></textarea> <br />
+                        placeholder="Enter your feedback here" 
+                        className="recommend"
+                        rows="20" cols="100" onChange={handleInput}></textarea> <br />
                         <input 
                         type="text"
                         name="name"
-                        placholder="Name Here"
+                        placeholder="Name Here"
+                        onChange={handleInput}
                         /> <br />
-                        <button className="submit-button" onClick={handleForm}>
+                        <button className="submit-button">
                             Submit
                         </button><br />
                       </form>
