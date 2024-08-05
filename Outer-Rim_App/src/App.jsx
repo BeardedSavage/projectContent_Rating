@@ -16,7 +16,7 @@ function App() {
           <Route path="/apps" element={<Applications/>} />
         </Routes>
       </>
-  );
+    )
 }
 
 export default App;
