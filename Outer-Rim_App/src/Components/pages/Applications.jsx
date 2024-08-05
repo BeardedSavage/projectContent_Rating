@@ -53,11 +53,6 @@ function Applications() {
             alert(
             'Thank you for your Application. It will be reviewed then an admin of the server will get with you.'
             );
-        } else (isConfirmed = '') => {
-            console.log ('Empty Form');
-            alert (
-                'Please fill out all areas of the form. Once complete Submit it and then an Admin Will get with you on teh Discord.'
-            )
         }
     };
 
