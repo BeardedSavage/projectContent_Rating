@@ -51,7 +51,7 @@ function Applications() {
                 scene3: ''
             });
             alert(
-            'Thank you for your Application. It will be reviewed then an admin of the server will get with you.'
+            'Thank you for your application. Make a ticket in our Discord and an admin will get with you.'
             );
         }
     };
